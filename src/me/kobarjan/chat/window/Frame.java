@@ -2,11 +2,14 @@ package me.kobarjan.chat.window;
 
 import javax.swing.*;
 
+import static me.kobarjan.chat.window.Gui.buttons;
+
 public class Frame extends JFrame {
 
     public Frame() {
 
         initUI();
+        buttons();
     }
 
     public void initUI() {
