@@ -9,4 +9,8 @@ public class Gui {
         bConnect.addActionListener(new Events());
         return bConnect;
     }
+    public static JButton bStartCPU() {
+        JButton bStartCPU = new JButton("CPU stats");
+        bStartCPU.setBounds();
+    }
 }
