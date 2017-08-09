@@ -18,11 +18,11 @@ def socketSetup(port):
         print("Started waiting for client.")
         run = True
         c, addr = s.accept()
-        logging.info("Got connection from: " + addr)
-        print("Got connection from: " + addr)
+        logging.info("Got connection from")
+        print("Got connection from: " + str(addr))
         while run == True:
             answer = c.recv(1024)
             if (answer == ""):
                 logging.warn("Answer not recieved")
-            elif ():
-                logging.info
+            elif (answer == "cpu"):
+                logging.info("Getting cpu stats")
