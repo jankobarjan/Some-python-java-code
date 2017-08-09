@@ -1,14 +1,13 @@
 package me.kobarjan.chat.window;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
 
 public class Frame extends JFrame {
 
-    public Frame(JButton button) {
+    public Frame(JButton bConnect, JButton bCPU, JButton bSettings) {
 
         initUI();
-        layoutInit(button);
+        layoutInit(bConnect, bCPU, bSettings);
     }
 
     public void initUI() {
@@ -17,8 +16,10 @@ public class Frame extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
-    public void layoutInit(JButton button){
+    public void layoutInit(JButton button,JButton bCPU, JButton bSettings){
         setLayout(null);
         add(button);
+        add(bSettings);
+        add(bCPU);
     }
 }

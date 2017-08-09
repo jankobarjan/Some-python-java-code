@@ -2,7 +2,6 @@ package me.kobarjan.chat.window;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 
 import static me.kobarjan.chat.conection.SocketSetup.socketSetup;
 

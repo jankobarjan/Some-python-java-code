@@ -8,7 +8,7 @@ import static me.kobarjan.chat.window.Gui.*;
 public class Main {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            Frame frame = new Frame(bConnect());
+            Frame frame = new Frame(bConnect(),bStartCPU(), bSettings());
             frame.setVisible(true);
         });
     }

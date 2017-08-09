@@ -1,10 +1,28 @@
 import socket
 import logging
 
+__author__ = "kobarjan"
+
 def socketSetup(port):
-    s = socket()
-    s.bind(port)
-    #if(s is None):
-     #   logging.warn("Socket not created!")
+    s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    try:
+        s.bind(("localhost", port))
+    except socket.error as err:
+        print ("Bind failed. Error Code: " .format(err))
+    if(s is None):
+        logging.warn("Socket not created!")
     logging.info("Socket created succesfully.")
-    s.accept()
+    print("Socket created succesfully.")
+    s.listen(5)
+    while True:
+        print("Started waiting for client.")
+        run = True
+        c, addr = s.accept()
+        logging.info("Got connection from: " + addr)
+        print("Got connection from: " + addr)
+        while run == True:
+            answer = c.recv(1024)
+            if (answer == ""):
+                logging.warn("Answer not recieved")
+            elif ():
+                logging.info
