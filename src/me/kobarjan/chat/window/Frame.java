@@ -14,7 +14,8 @@ public class Frame extends JFrame {
         setTitle("Window");
         setSize(1280, 720);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
     }
     public void layoutInit(JButton button, JButton bCPU, JButton bSettings, JButton bExit){
         setLayout(null);
