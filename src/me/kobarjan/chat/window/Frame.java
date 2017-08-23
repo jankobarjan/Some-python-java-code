@@ -4,10 +4,10 @@ import javax.swing.*;
 
 public class Frame extends JFrame {
 
-    public Frame(JButton bConnect, JButton bCPU, JButton bSettings, JButton bExit) {
+    public Frame(JButton bConnect, JButton bSettings, JLabel lConnected) {
 
         initUI();
-        layoutInit(bConnect, bCPU, bSettings, bExit);
+        layoutInit(bConnect, bSettings, lConnected);
     }
 
     public void initUI() {
@@ -17,11 +17,10 @@ public class Frame extends JFrame {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
     }
-    public void layoutInit(JButton button, JButton bCPU, JButton bSettings, JButton bExit){
+    public void layoutInit(JButton button, JButton bSettings, JLabel lConnected){
         setLayout(null);
         add(button);
         add(bSettings);
-        add(bCPU);
-        add(bExit);
+        add(lConnected);
     }
 }

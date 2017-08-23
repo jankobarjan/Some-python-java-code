@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class SocketSetup {
-    public static void socketSetup(String serverIP, int port) {
+    public static boolean socketSetup(String serverIP, int port) {
         try {
             Socket socket = new Socket(serverIP, port);
             System.out.println("Connecting to: " + serverIP + ". On port: " + port + ".");
@@ -13,8 +13,10 @@ public class SocketSetup {
             DataOutputStream out = new DataOutputStream(outputStream);
             InputStream inputStream = socket.getInputStream();
             DataInputStream in = new DataInputStream(inputStream);
+            return true;
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
     }
 }
