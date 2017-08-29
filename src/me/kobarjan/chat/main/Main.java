@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             Gui gui = new Gui(6066, "localhost", 1280, 720);
-            Frame frame = new Frame(gui.bConnect(), gui.bSettings(), gui.lConnected());
+            Frame frame = new Frame(gui.bConnect(), gui.lConnected(),gui.menuBar());
             frame.setVisible(true);
         });
     }

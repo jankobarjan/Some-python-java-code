@@ -13,6 +13,8 @@ public class Gui implements ActionListener{
     protected String serverIP;
     JButton bConnect, bSettings;
     JLabel lConnected;
+    JMenuBar menuBar;
+    JMenu actionMenu, editMenu;
     Font font = new Font("Arial", Font.PLAIN, 40);
     Color gray = new Color(10, 10, 10);
     int width;
@@ -27,25 +29,25 @@ public class Gui implements ActionListener{
 
     public JButton bConnect() {
         bConnect = new JButton("Connect");
-        bConnect.setBounds(0,0,200,50);
+        bConnect.setBounds((width/2)-100,(height/2)-25,200,50);
         bConnect.setForeground(gray);
         bConnect.setFont(font);
         bConnect.addActionListener(this);
         return bConnect;
     }
-    public JButton bSettings() {
-        bSettings = new JButton("Settings");
-        bSettings.setBounds(200, 0, 200,50);
-        bSettings.setForeground(gray);
-        bSettings.setFont(font);
-        return bSettings;
-    }
     public JLabel lConnected() {
         lConnected = new JLabel("xd");
-        lConnected.setBounds(1000,0,200,200);
+        lConnected.setBounds(1000,0,lConnected.getWidth(),lConnected.getHeight());
         return lConnected;
     }
-
+    public JMenuBar menuBar() {
+        menuBar = new JMenuBar();
+        actionMenu = new JMenu("Task");
+        editMenu = new JMenu("Edit");
+        menuBar.add(actionMenu);
+        menuBar.add(editMenu);
+        return menuBar;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
