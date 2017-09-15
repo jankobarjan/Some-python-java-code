@@ -15,7 +15,6 @@ public class SocketSetup {
             DataInputStream in = new DataInputStream(inputStream);
             return true;
         } catch (IOException e) {
-            e.printStackTrace();
             return false;
         }
     }

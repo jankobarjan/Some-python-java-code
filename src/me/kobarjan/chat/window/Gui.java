@@ -15,7 +15,8 @@ public class Gui implements ActionListener{
     JLabel lConnected;
     JMenuBar menuBar;
     JMenu actionMenu, editMenu;
-    Font font = new Font("Arial", Font.PLAIN, 40);
+    Font font = new Font("Arial", Font.PLAIN, 10);
+    Font lConnectedFont = new Font("Arial", Font.PLAIN, 20);
     Color gray = new Color(10, 10, 10);
     int width;
     int height;
@@ -29,7 +30,7 @@ public class Gui implements ActionListener{
 
     public JButton bConnect() {
         bConnect = new JButton("Connect");
-        bConnect.setBounds((width/2)-100,(height/2)-25,200,50);
+        bConnect.setBounds((width/2)-100,(height/2)-25,100,20);
         bConnect.setForeground(gray);
         bConnect.setFont(font);
         bConnect.addActionListener(this);
@@ -38,6 +39,7 @@ public class Gui implements ActionListener{
     public JLabel lConnected() {
         lConnected = new JLabel("xd");
         lConnected.setBounds(1000,0,lConnected.getWidth(),lConnected.getHeight());
+        lConnected.setFont();
         return lConnected;
     }
     public JMenuBar menuBar() {
@@ -55,6 +57,8 @@ public class Gui implements ActionListener{
             boolean connected = socketSetup("localhost", port);
             if (connected) {
                 bConnect.hide();
+            } else {
+                lConnected.show();
             }
         } else if (source == bSettings) {
             System.out.println("Settings");
